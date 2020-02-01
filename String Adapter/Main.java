@@ -4,6 +4,6 @@ public class Main {
 		//g.run();
 		
 		StringAdapter a = new StringAdapter();
-		a.alternateCaps("my   boy b    obby");
+		System.out.println(a.alternateCaps("everybody    is     in  the      place"));
 	}
 }

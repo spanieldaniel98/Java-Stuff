@@ -4,13 +4,9 @@ import java.util.ArrayList;
 public class StringAdapter {
 	
 	Scanner scanner;
-	String input, output;
+	String input;
 	ArrayList<Character> outputArray;
 	boolean caps;
-
-	public StringAdapter() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	public String removeExtraSpaces(String input) {
 		return input.replaceAll("\\s+", " ");
@@ -32,9 +28,16 @@ public class StringAdapter {
 				outputArray.add(Character.toUpperCase(c));
 			caps = !caps;
 		}
-		output = outputArray.toString().replaceAll("[,\\s\\[\\]]", "");
-		System.out.println(output);
-		return output;
+		return charListToString(outputArray);
+	}
+	
+	public String charListToString(ArrayList<Character> charList) {
+		StringBuilder sb = new StringBuilder(charList.size());
+		
+		for(Character c : charList) {
+			sb.append(c);
+		}
+		return sb.toString();
 	}
 	
 	public void gridOffset(String input) {
